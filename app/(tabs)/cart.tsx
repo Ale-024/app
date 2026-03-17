@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   actionRow: { 
     flexDirection: 'row', 
     alignItems: 'center', 
-    marginTop: 10, 
+    marginTop: 10 
   },
   removeText: { 
     color: '#ccc', 
