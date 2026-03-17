@@ -1,38 +1,83 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageSourcePropType } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import { useCart } from "./CartContext"; 
 
 type CardProps = {
+  id: string;
   title: string;
-  description: string;
+  price: string;
+  image: ImageSourcePropType; // Para usar require() de tus imágenes locales
 };
 
-export default function Card({ title, description }: CardProps) {
+export default function Card({ id, title, price, image }: CardProps) {
+  const { addToCart } = useCart();
+
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.description}>{description}</Text>
+      <Image source={image} style={styles.productImage} />
+      
+      <View style={styles.infoContainer}>
+        <Text style={styles.category}> </Text>
+        <Text style={styles.title} numberOfLines={1}>{title}</Text>
+        
+        <View style={styles.footerRow}>
+          <Text style={styles.price}>HN {price}</Text>
+          
+          <TouchableOpacity 
+            style={styles.addButton}
+            onPress={() => addToCart({ id, name: title, price: parseFloat(price), image: image })}
+          >
+            <Ionicons name="add" size={20} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#215774",
-    padding: 16,
+    backgroundColor: "transparent", // Como en tu imagen de referencia
+    width: 220,
+    marginRight: 20,
+    borderRadius: 8,
+  },
+  productImage: {
+    width: "100%",
+    height: 300,
     borderRadius: 12,
-    marginBottom: 15,
-    shadowColor: "#f4fa46",
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 3,
+    backgroundColor: '#1e293b',
+  },
+  infoContainer: {
+    paddingVertical: 10,
+  },
+  category: {
+    color: "#666",
+    fontSize: 12,
+    marginBottom: 2,
   },
   title: {
-    fontSize: 18,
+    color: "white",
+    fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 5,
+    marginBottom: 8,
   },
-  description: {
+  footerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  price: {
+    color: "white",
     fontSize: 14,
-    color: "#000000",
+  },
+  addButton: {
+    backgroundColor: "#FFD700", // El dorado de King's Store
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
