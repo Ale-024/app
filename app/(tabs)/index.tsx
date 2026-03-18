@@ -1,12 +1,13 @@
 import { Image } from 'expo-image';
-import { StyleSheet, ScrollView } from 'react-native'; // <--- AGREGADO ScrollView AQUÍ
+import { StyleSheet, ScrollView, Dimensions } from 'react-native'; 
 
-import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import Header from '@/components/ui/Header';
 import Card from '@/components/ui/cards';
+
+const { width } = Dimensions.get('window');
 
 export default function HomeScreen() {
   return (
@@ -17,14 +18,14 @@ export default function HomeScreen() {
         headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
         headerImage={
           <Image
-            source={require('@/assets/images/partial-react-logo.png')}
+            source={require('@/assets/images/logo 1.jpg')}
             style={styles.reactLogo}
           />
         }>
         
         <ThemedView style={styles.titleContainer}>
-          <ThemedText type="title" style={{ color: '#FFD700' }}> King's Store </ThemedText>
-          <HelloWave />
+          <ThemedText type="title" style={{ color: '#FFD700' }}> </ThemedText>
+          
         </ThemedView>
 
         {/* SECCIÓN DE PRODUCTOS HORIZONTALES */}
@@ -117,6 +118,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
     paddingHorizontal: 15,
+    marginTop: 10,
   },
   stepContainer: {
     gap: 8,
@@ -124,10 +126,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+    
+    width: '100%', // Ocupa el 80% del ancho de la pantalla
+    alignSelf: 'center', // Centra el logo horizontalmente
+    marginTop: 0, // Lo baja un poco para que no pegue con el Header
+    aspectRatio: 1900 / 310,
   },
 });

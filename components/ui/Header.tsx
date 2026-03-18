@@ -26,12 +26,12 @@ export default function Header() {
           <Text style={styles.link}>Buscar</Text>
         </TouchableOpacity>
 
-        {/* 3. BOTÓN DEL CARRITO CON CONTADOR */}
+        {/* BOTÓN DEL CARRITO CON CONTADOR */}
         <TouchableOpacity 
           onPress={() => router.push("/cart")} 
           style={styles.cartContainer}
         >
-          <Ionicons name="cart-outline" size={24} color="#FFD700" />
+          <Ionicons name="cart-outline" size={24} color="#91843c" />
           {items.length > 0 && (
             <View style={styles.badge}>
               <Text style={styles.badgeText}>{items.length}</Text>
@@ -45,18 +45,19 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    height: 70, // Lo subí un poquito para que luzca más
-    backgroundColor: "#000000", // Negro puro como tu logo
+    height: 70, 
+    backgroundColor: "#000000", 
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 15,
     borderBottomWidth: 1,
-    borderBottomColor: "#FFD700", // Línea dorada sutil
+    borderBottomColor: "#FFD700", 
+    zIndex: 10
   },
   logo: {
-    color: "#FFD700", // Dorado para el logo
-    fontSize: 20,
+    color: "#FFD700", 
+    fontSize: 40,
     fontWeight: "bold",
   },
   menu: {
