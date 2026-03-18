@@ -18,7 +18,7 @@ export default function HomeScreen() {
         headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
         headerImage={
           <Image
-            source={require('@/assets/images/logo 1.jpg')}
+            source={require('@/assets/images/logo_1.jpg')}
             style={styles.reactLogo}
           />
         }>
@@ -49,55 +49,55 @@ export default function HomeScreen() {
               id="2"
               title="PANTALON FORMAL" 
               price="250.00" 
-              image={require('../../assets/images/pantalon formal.jpg')} 
+              image={require('../../assets/images/pantalon_formal.jpg')} 
             />
              <Card 
               id="3"
               title="PANTALON JEANS" 
               price="299.00" 
-              image={require('../../assets/images/pantalon jeans.jpg')} 
+              image={require('../../assets/images/pantalon_jeans.jpg')} 
             />
             <Card 
               id="4"
               title="SANDALIAS PUMA" 
               price="299.00" 
-              image={require('../../assets/images/zandalias puma.jpg')}
+              image={require('../../assets/images/zandalias_puma.jpg')}
             />
               <Card 
               id="5"
               title="ZAPATOS NIKE" 
               price="299.00" 
-              image={require('../../assets/images/zapatos nike.jpg')}
+              image={require('../../assets/images/zapatos_nike.jpg')}
             />
               <Card 
               id="6"
               title="ZAPATOS PUMA" 
               price="299.00" 
-              image={require('../../assets/images/zapato puma.jpg')}
+              image={require('../../assets/images/zapato_puma.jpg')}
             />
               <Card 
               id="7"
               title="SANDALIAS DE SURF" 
               price="299.00" 
-              image={require('../../assets/images/sandalia surf puma.jpg')}
+              image={require('../../assets/images/sandalia_surf_puma.jpg')}
             />
             <Card 
               id="8"
               title="SHORT PUMA" 
               price="299.00" 
-              image={require('../../assets/images/short puma.jpg')}
+              image={require('../../assets/images/short_puma.jpg')}
             />
               <Card 
               id="9"
               title="CHAQUETA DE CUERO" 
               price="299.00" 
-              image={require('../../assets/images/chaqueta cuero.jpg')}
+              image={require('../../assets/images/chaqueta_cuero.jpg')}
             />
               <Card 
               id="10"
               title="CAMISA DE ALGODON" 
               price="299.00" 
-              image={require('../../assets/images/camisa normal.jpg')}
+              image={require('../../assets/images/camisa_normal.jpg')}
             />
             
           </ScrollView>
